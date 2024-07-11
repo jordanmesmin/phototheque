@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier une Photo</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Modifier une Photo</h1>
+    </header>
+    <div class="container">
+        <form action="/photos/edit/<%= photo._id %>" method="POST">
+            <label for="title">Titre:</label>
+            <input type="text" name="title" value="<%= photo.title %>" required>
+            <label for="description">Description:</label>
+            <textarea name="description" required><%= photo.description %></textarea>
+            <label for="date">Date:</label>
+            <input type="date" name="date" value="<%= photo.date.toISOString().substring(0, 10) %>" required>
+            <button type="submit">Modifier</button>
+        </form>
+        <a href="/">Retour à l'accueil</a>
+    </div>
+    <footer class="footer">
+        &copy; 2024 Photothèque
+    </footer>
+</body>
+</html>

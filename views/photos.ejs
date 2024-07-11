@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Liste des Photos</h1>
+    </header>
+    <div class="container">
+        <div class="grid-container">
+            <% photos.forEach(photo => { %>
+                <div class="grid-item">
+                    <img src="/<%= photo.image %>" alt="<%= photo.title %>">
+                    <h2><%= photo.title %></h2>
+                    <p><%= photo.description %></p>
+                    <p>Date: <%= photo.date.toDateString() %></p>
+                    <div class="actions">
+                        <a href="/photos/edit/<%= photo._id %>">Modifier</a>
+                        <form action="/photos/delete/<%= photo._id %>" method="POST">
+                            <button type="submit">Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        <a href="/">Retour à l'accueil</a>
+    </div>
+    <footer class="footer">
+        &copy; 2024 Photothèque
+    </footer>
+</body>
+</html>

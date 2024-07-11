@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une Photo</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ajouter une Photo</h1>
+    </header>
+    <div class="container">
+        <form action="/photos/add" method="POST" enctype="multipart/form-data">
+            <label for="title">Titre:</label>
+            <input type="text" name="title" required>
+            <label for="description">Description:</label>
+            <textarea name="description" required></textarea>
+            <label for="date">Date:</label>
+            <input type="date" name="date" required>
+            <label for="image">Image:</label>
+            <input type="file" name="image" required>
+            <button type="submit">Ajouter</button>
+        </form>
+        <a href="/">Retour à l'accueil</a>
+    </div>
+    <footer class="footer">
+        &copy; 2024 Photothèque
+    </footer>
+</body>
+</html>
